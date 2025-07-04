@@ -1,0 +1,88 @@
+<div class="app-container">
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-container">
+      <img src="assets/hire_logo.png" alt="H-care" class="logo">
+    </div>
+    
+    <button class="register-btn" (click)="showUserForm()">
+      <span class="plus-icon">+</span>
+      Register User
+    </button>
+
+    <nav class="nav-menu">
+      <a (click)="showUserList()" routerLinkActive="active" class="nav-item" style="cursor: pointer">
+        <i class="icon-patients"></i>
+        <span>User List </span>
+      </a>
+      <!-- <a href="#" class="nav-item">
+        <i class="icon-overview"></i>
+        <span>Overview</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="icon-map"></i>
+        <span>Map</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="icon-departments"></i>
+        <span>Departments</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="icon-doctors"></i>
+        <span>Doctors</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="icon-history"></i>
+        <span>History</span>
+      </a> -->
+      <a href="#" class="nav-item">
+        <i class="icon-settings"></i>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <!-- <div class="mobile-app-promo">
+      <div class="promo-content">
+        <h3>Get mobile app</h3>
+        <div class="store-buttons">
+          <a href="#" class="store-btn">
+            <img src="assets/playstore.svg" alt="Play Store">
+          </a>
+          <a href="#" class="store-btn">
+            <img src="assets/appstore.svg" alt="App Store">
+          </a>
+        </div>
+      </div>
+    </div> -->
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+      <div class="search-bar">
+        <i class="icon-search"></i>
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="user-menu">
+        <button class="notification-btn">
+          <i class="icon-notification"></i>
+        </button>
+        <div class="user-profile" (click)="toggleDropdown()">
+            <img src="assets/avatar_image.png" alt="User" class="avatar">
+            <span class="user-name">Emma Kwan</span>
+            <i class="icon-dropdown"></i>
+            <div class="dropdown-menu" *ngIf="isDropdownOpen">
+              <button class="dropdown-item" (click)="logout()">Logout</button>
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="content">
+      <!-- Your router-outlet or content will go here -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

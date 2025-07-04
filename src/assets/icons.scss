@@ -1,0 +1,16 @@
+/* Icon Font Styles */
+[class^="icon-"] {
+  font-family: 'Material Icons';
+  font-style: normal;
+}
+
+.icon-patients:before { content: '\e7fb'; } /* people */
+.icon-overview:before { content: '\e8e5'; } /* pie chart */
+.icon-map:before { content: '\e55b'; } /* map */
+.icon-departments:before { content: '\e7f1'; } /* business */
+.icon-doctors:before { content: '\e87c'; } /* local hospital */
+.icon-history:before { content: '\e889'; } /* history */
+.icon-settings:before { content: '\e8b8'; } /* settings */
+.icon-search:before { content: '\e8b6'; } /* search */
+.icon-notification:before { content: '\e7f4'; } /* notifications */
+.icon-dropdown:before { content: '\e5cf'; } /* arrow drop down */

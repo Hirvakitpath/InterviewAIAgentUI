@@ -1,0 +1,103 @@
+<div class="user-details-container">
+  <div *ngIf="user; else noUser">
+     <div class="details-grid details-grid-main" style="margin-bottom: 40px;">
+     
+      <div class="detail-item">
+        <div class="question">Total Years of Experience:</div>
+        <div class="answer">{{ user.totalYearsExperience }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question">Relevant Years of Experience:</div>
+        <div class="answer">{{ user.relevantYearsExperience }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question">Expected CTC:</div>
+        <div class="answer">{{ user.expectedCTC }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question">Notice Period:</div>
+        <div class="answer">{{ user.noticePeriod }}</div>
+         
+      </div>
+      <div class="detail-item">
+        <div class="question">Expected CTC:</div>
+        <div class="answer">{{ user.expectedCTC }}</div>
+         
+      </div>
+      <div class="detail-item">
+        <div class="question">Reason for Job Change:</div>
+        <div class="answer">{{ user.reasonForJobChange }}</div>
+        
+      </div>
+      <div class="detail-item">
+        <div class="question">Current Location:</div>
+        <div class="answer">{{ user.currentLocation }}</div>
+         
+      </div>
+       <div class="detail-item">
+        <div class="question">Skillset: </div>
+        <div class="answer">{{ user.skillset }}</div>
+         
+      </div>
+       <div class="detail-item">
+        Resume: <a href="#" class="download-pdf detail-value"><i class="icon-pdf"></i> Download PDF</a>
+      </div>
+     
+     
+    
+    
+     
+    </div>
+    <div class="details-grid">
+     
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Total Years of Experience:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.totalYearsExperience }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Relevant Years of Experience:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.relevantYearsExperience }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Expected CTC:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.expectedCTC }}</div>
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Notice Period:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.noticePeriod }}</div>
+         
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Expected CTC:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.expectedCTC }}</div>
+         
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Reason for Job Change:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.reasonForJobChange }}</div>
+        
+      </div>
+      <div class="detail-item">
+        <div class="question"><span>Question?</span>Current Location:</div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.currentLocation }}</div>
+         
+      </div>
+       <div class="detail-item">
+        <div class="question"><span>Question?</span>Skillset: </div>
+        <div class="answer"><span class="detail-value">Answer.</span>{{ user.skillset }}</div>
+         
+      </div>
+       <div class="detail-item">
+        Resume: <a href="#" class="download-pdf detail-value"><i class="icon-pdf"></i> Download PDF</a>
+      </div>
+     
+     
+    
+    
+     
+    </div>
+  </div>
+  <ng-template #noUser>
+    <p>User not found.</p>
+  </ng-template>
+</div>

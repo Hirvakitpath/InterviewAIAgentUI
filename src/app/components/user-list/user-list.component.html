@@ -1,0 +1,21 @@
+<div class="user-list-container" *ngIf="isVisible">
+  <h2>Registered Users</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.mobile }}</td>
+        <td><button class="view-button" (click)="viewUserDetails(user)">View</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
