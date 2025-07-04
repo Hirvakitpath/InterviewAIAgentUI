@@ -48,15 +48,16 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
+  try {
     console.log('Form submitted', this.userForm.value, this.selectedFile);
+    
     if (this.userForm.valid && this.selectedFile) {
       const formData = new FormData();
       formData.append('CandidateFullName', this.userForm.get('name')?.value);
       formData.append('Email', this.userForm.get('email')?.value);
       formData.append('PhoneNumber', this.userForm.get('mobile')?.value);
       formData.append('Description', this.userForm.get('description')?.value);
-     formData.append('CV', this.selectedFile);
+      formData.append('CV', this.selectedFile);
       formData.append('Questions', JSON.stringify([]));
 
       this.http.post('https://localhost:7187/api/Candidate/add-candidate-with-cv', formData)
@@ -66,15 +67,21 @@ export class UserFormComponent implements OnInit {
             this.userForm.reset();
             this.selectedFileName = 'No file chosen';
             this.selectedFile = null;
-             this.visibilityService.toggleUserList(true);
-             this.router.navigate(['/users']);
+            this.visibilityService.toggleUserList(true);
+            this.router.navigate(['/users']);
           },
           error: (error) => {
             console.error('Submission failed', error);
+            alert('Error submitting form. Please try again.');
           }
         });
     } else {
       console.log('Form invalid or no file selected');
+      alert('Please fill all required fields and select a CV file.');
     }
+  } catch (error) {
+    console.error('Unexpected error:', error);
+    alert('An error occurred. Please try again.');
   }
+}
 }
