@@ -1,4 +1,4 @@
-<div class="form-container" *ngIf="isVisible">
+<!-- <div class="form-container" *ngIf="isVisible">
   <h2>User Registration</h2>
 
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form">
@@ -18,8 +18,8 @@
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea id="description" name="description" placeholder="Tell us about your project or inquiry..."
-        class="form-control" maxlength="500" required></textarea>
+      <textarea id="description" name="description" formControlName="description" placeholder="Tell us about your project or inquiry..."
+  class="form-control" maxlength="500" required></textarea>
       <div class="character-count">
         <span id="charCount">0</span>/500 characters
       </div>
@@ -28,8 +28,52 @@
     <div class="form-group">
       <label for="cv">Upload your CV</label>
       <div class="file-upload">
-        <input type="file" id="cv" (change)="onFileSelected($event)" formControlName="cv" accept=".pdf,.doc,.docx"
-          class="file-input" #fileInput>
+       <input type="file" id="cv" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" class="file-input" #fileInput>
+        <div class="file-upload-btn">
+          <button type="button" class="choose-file-btn" (click)="openFileInput(fileInput)">
+            Choose File
+          </button>
+          <span class="file-name">{{ selectedFileName }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</div> -->
+
+<div class="form-container" *ngIf="isVisible">
+  <h2>User Registration</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" placeholder="Enter your name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input type="tel" id="mobile" formControlName="mobile" placeholder="Enter mobile number" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+     <textarea id="description" name="description" formControlName="description" placeholder="Tell us about your project or inquiry..."
+  class="form-control" maxlength="500" required></textarea>
+      <div class="character-count">
+        <span id="charCount">{{ userForm.get('description')?.value?.length || 0 }}</span>/500 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cv">Upload your CV</label>
+      <div class="file-upload">
+        <input type="file" id="cv" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" class="file-input" #fileInput>
         <div class="file-upload-btn">
           <button type="button" class="choose-file-btn" (click)="openFileInput(fileInput)">
             Choose File

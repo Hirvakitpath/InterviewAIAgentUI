@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
@@ -18,6 +19,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/users', pathMatch: 'full' },   
       { path: 'register', component: UserFormComponent },
